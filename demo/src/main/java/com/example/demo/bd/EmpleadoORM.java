@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.demo.bd;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Empleado {
+public class EmpleadoORM {
     @Id
     private Integer id;
     private String nombre;

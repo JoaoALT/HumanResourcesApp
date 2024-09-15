@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.Empleado;
-import com.example.demo.service.EmpleadoService;
+import com.example.demo.bd.EmpleadoORM;
+import com.example.demo.logica.EmpleadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/empleados")
-public class TaskController {
+public class EmpleadoController {
 
 
     @Autowired
@@ -19,27 +19,27 @@ public class TaskController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Empleado crearEmpleado(@RequestBody Empleado empleado){
+    public EmpleadoORM crearEmpleado(@RequestBody EmpleadoORM empleado){
         return service.addEmpleado(empleado);
     }
 
     @GetMapping
-    public List<Empleado> getAllEmpleados(){
+    public List<EmpleadoORM> getAllEmpleados(){
         return service.findAllEmpleados();
     }
 
     @GetMapping("/{empleadoId}")
-    public Empleado getEmpleadoById(@PathVariable Integer empleadoId){
+    public EmpleadoORM getEmpleadoById(@PathVariable Integer empleadoId){
         return service.getEmpleadoById(empleadoId);
     }
 
     @GetMapping("/Email/{empleadoEmail}")
-    public Empleado getEmpleadoByEmail(@PathVariable String empleadoEmail){
+    public EmpleadoORM getEmpleadoByEmail(@PathVariable String empleadoEmail){
         return service.getEmpleadoByEmail(empleadoEmail);
     }
 
-    @PutMapping
-    public Empleado updateEmpleado(@RequestBody Empleado empleado){
+    @PutMapping("/actualizar/{empleadoId}")
+    public EmpleadoORM updateEmpleado(@RequestBody EmpleadoORM empleado){
         return service.updateEmpleado(empleado);
     }
 
