@@ -3,9 +3,11 @@ package com.example.demo.service;
 import com.example.demo.model.Empleado;
 import com.example.demo.repository.EmpleadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class EmpleadoService {
@@ -13,10 +15,8 @@ public class EmpleadoService {
     @Autowired
     private EmpleadoRepository repository;
 
-    //
-
     public Empleado addEmpleado(Empleado empleado){
-
+        empleado.setId(getNewId(empleado));
         return repository.save(empleado);
     }
 
@@ -47,6 +47,17 @@ public class EmpleadoService {
     public String deleteEmpleado(Integer empleadoId){
         repository.deleteById(empleadoId);
         return "Empleado"+ empleadoId.toString() +"eliminado exitosamente";
+    }
+
+    private Integer getNewId(Empleado newEmployee){
+        List<Empleado> listaTemp = findAllEmpleados();
+
+        for (Empleado empleado : listaTemp){
+            if (newEmployee.getId().equals(empleado.getId())){
+                return (newEmployee.getId()+1);
+            }
+        }
+        return newEmployee.getId();
     }
 
 }
