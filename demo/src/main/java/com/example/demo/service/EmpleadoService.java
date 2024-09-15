@@ -13,10 +13,8 @@ public class EmpleadoService {
     @Autowired
     private EmpleadoRepository repository;
 
-    //
-
     public Empleado addEmpleado(Empleado empleado){
-
+        empleado.setId(getNewId(empleado));
         return repository.save(empleado);
     }
 
@@ -46,7 +44,18 @@ public class EmpleadoService {
 
     public String deleteEmpleado(Integer empleadoId){
         repository.deleteById(empleadoId);
-        return "Empleado"+ empleadoId.toString() +"eliminado exitosamente";
+        return "Empleado"+ empleadoId +"eliminado exitosamente";
+    }
+
+    private Integer getNewId(Empleado newEmployee){
+        List<Empleado> listaTemp = findAllEmpleados();
+
+        for (Empleado empleado : listaTemp){
+            if (newEmployee.getId().equals(empleado.getId())){
+                return (newEmployee.getId()+1);
+            }
+        }
+        return newEmployee.getId();
     }
 
 }
