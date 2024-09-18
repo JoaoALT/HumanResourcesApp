@@ -48,7 +48,7 @@ public class EmpleadoController {
     }
 
     @CrossOrigin
-    @DeleteMapping("/eliminar/{empleadoId}")
+    @DeleteMapping("/eliminar?id={empleadoId}")
     public String deleteEmpleado(@PathVariable Integer empleadoId){
         return service.deleteEmpleado(empleadoId);
     }
