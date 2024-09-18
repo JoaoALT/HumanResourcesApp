@@ -7,6 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Document(collection = "Users")
 @Data
@@ -19,8 +20,8 @@ public class EmpleadoORM {
     private String apellido;
     private String email;
     private String telefono;
-    private ArrayList<String> habilidades;
-    private ArrayList<String> formacionAcademica;
-    private ArrayList<String> historialLaboral;
+    private List<String> habilidades;
+    private List<String> formacionAcademica;
+    private List<String> historialLaboral;
 
 }

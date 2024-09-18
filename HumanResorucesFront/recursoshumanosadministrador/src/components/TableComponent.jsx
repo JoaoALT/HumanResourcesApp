@@ -2,8 +2,9 @@ import React from 'react';
 import {BsFillTrashFill, BsFillPencilFill} from 'react-icons/bs'
 import "../css/TableComponent.css"
 
-export default function TableComponent({listaempleados}) {
-  return (
+export default function TableComponent({listaempleados, onEdit, onDelete}) {
+  return (<div>
+        <h1> RR.HH JM</h1>
     <div className="Table-wrapper">
       <table className="Table">
         <thead>
@@ -22,20 +23,38 @@ export default function TableComponent({listaempleados}) {
 
         <tbody>
 
-          {listaempleados.map((empleado, i) => (
-            <tr key={i}>
+          {listaempleados.map((empleado) => (
+            <tr key={empleado.id}>
               <td>{empleado.id}</td>
               <td>{empleado.nombre}</td>
               <td>{empleado.apellido}</td>
               <td>{empleado.email}</td>
               <td>{empleado.telefono}</td>
-              <td className="Expand">{empleado.habilidades}</td>
-              <td className="Expand">{empleado.formacionAcademica}</td>
-              <td className="Expand">{empleado.historialLaboral}</td>
+              <td>
+                <ul className="list-column">
+                  {empleado.habilidades.map((habilidad, index) => (
+                      <li key={index}>{habilidad}</li>
+                  ))}
+                </ul>
+              </td>
+              <td>
+                <ul className="list-column">
+                  {empleado.formacionAcademica.map((formacion, index) => (
+                      <li key={index}>{formacion}</li>
+                  ))}
+                </ul>
+              </td>
+              <td>
+                <ul className="list-column">
+                  {empleado.historialLaboral.map((historial, index) => (
+                      <li key={index}>{historial}</li>
+                  ))}
+                </ul>
+              </td>
               <td>
                 <span className="Actions">
-                  <BsFillTrashFill className="Delete-btn"/>
-                  <BsFillPencilFill className="Edit-btn"/>
+                  <BsFillTrashFill className="Delete-btn" onClick={() => onDelete(empleado.id)}/>
+                  <BsFillPencilFill className="Edit-btn" onClick={() => onEdit(empleado.id)}/>
                 </span>
               </td>
           </tr>
@@ -48,5 +67,6 @@ export default function TableComponent({listaempleados}) {
 
       </table>
     </div>
+  </div>
   )
 }

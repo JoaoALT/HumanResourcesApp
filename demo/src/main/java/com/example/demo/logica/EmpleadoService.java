@@ -44,12 +44,12 @@ public class EmpleadoService {
 
     public String deleteEmpleado(Integer empleadoId){
         repository.deleteById(empleadoId);
-        return "Empleado"+ empleadoId +"eliminado exitosamente";
+        return "Empleado "+ empleadoId +" eliminado exitosamente";
     }
 
     private Integer getNewId(EmpleadoORM newEmployee){
         List<EmpleadoORM> listaTemp = findAllEmpleados();
-    
+        newEmployee.setId(0);
         for (EmpleadoORM empleado : listaTemp){
             if (newEmployee.getId().equals(empleado.getId())){
                 int id = newEmployee.getId()+1;
