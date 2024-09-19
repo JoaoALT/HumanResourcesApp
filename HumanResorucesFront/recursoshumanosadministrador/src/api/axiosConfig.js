@@ -1,6 +1,6 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL:'http://localhost:8080',
+    baseURL:'https://humanresourcesapp-1.onrender.com',
     headers: {"Access-Control-Allow-Origin": "*"}
 });
