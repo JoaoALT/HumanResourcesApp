@@ -1,36 +1,28 @@
-# Stage 1: Build
-FROM ubuntu:latest AS build
+# Fase de construcción (Build stage)
+FROM openjdk:17-slim AS build
 
-# Install Java and necessary tools
-RUN apt-get update && \
-    apt-get install -y openjdk-17-jdk curl
+# Instalar dependencias necesarias para la compilación
+RUN apt-get update && apt-get install -y \
+    git \
+    wget
 
-# Install Gradle
-RUN curl -sSL https://services.gradle.org/distributions/gradle-7.6-bin.zip -o gradle.zip && \
-    unzip gradle.zip -d /opt && \
-    rm gradle.zip && \
-    ln -s /opt/gradle-7.6/bin/gradle /usr/bin/gradle
-
-# Set working directory
-WORKDIR /app
-
-# Copy project files
+# Copiar el código fuente al contenedor
 COPY . .
 
-# Build the JAR file
-RUN gradle bootJar --no-daemon
+# Dar permisos de ejecución al archivo gradlew
+RUN chmod +x ./gradlew
 
-# Stage 2: Runtime
-FROM openjdk:17-jdk-slim
+# Ejecutar Gradle para generar el archivo .jar
+RUN ./gradlew bootJar --no-daemon
 
-# Expose the port the app runs on
+# Fase de ejecución (Run stage)p
+FROM openjdk:17-slim
+
+# Exponer el puerto donde corre la aplicación
 EXPOSE 8080
 
-# Set working directory
-WORKDIR /app
+# Copiar el archivo .jar generado desde la fase de construcción
+COPY --from=build /build/libs/*.jar app.jar
 
-# Copy the JAR file from the build stage
-COPY --from=build /app/build/libs/demo-1.jar app.jar
-
-# Run the application
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+# Comando para ejecutar la aplicación
+ENTRYPOINT ["java", "-jar", "app.jar"]
