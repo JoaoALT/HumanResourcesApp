@@ -19,8 +19,9 @@ public class EmpleadoController {
     @CrossOrigin
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public EmpleadoORM crearEmpleado(@RequestBody EmpleadoORM empleado){
-        return service.addEmpleado(empleado);
+    public boolean crearEmpleado(@RequestBody EmpleadoORM empleado){
+        service.addEmpleado(empleado);
+        return true;
     }
 
     @CrossOrigin
@@ -36,19 +37,19 @@ public class EmpleadoController {
     }
 
     @CrossOrigin
-    @GetMapping("/Email/{empleadoEmail}")
+    @GetMapping("/email/{empleadoEmail}")
     public EmpleadoORM getEmpleadoByEmail(@PathVariable String empleadoEmail){
         return service.getEmpleadoByEmail(empleadoEmail);
     }
 
     @CrossOrigin
-    @PutMapping("/actualizar/{empleadoId}")
+    @PutMapping("/{empleadoId}")
     public EmpleadoORM updateEmpleado(@RequestBody EmpleadoORM empleado){
         return service.updateEmpleado(empleado);
     }
 
     @CrossOrigin
-    @DeleteMapping("/eliminar/{empleadoId}")
+    @DeleteMapping("/{empleadoId}")
     public String deleteEmpleado(@PathVariable Integer empleadoId){
         return service.deleteEmpleado(empleadoId);
     }

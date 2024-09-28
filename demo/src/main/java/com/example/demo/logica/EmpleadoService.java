@@ -2,20 +2,30 @@ package com.example.demo.logica;
 
 import com.example.demo.bd.EmpleadoORM;
 import com.example.demo.bd.EmpleadoJPA;
+import lombok.extern.slf4j.Slf4j;
+import org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.validation.*;
 import java.util.List;
+import java.util.Set;
 
+@Slf4j
 @Service
 public class EmpleadoService {
 
     @Autowired
     private EmpleadoJPA repository;
 
-    public EmpleadoORM addEmpleado(EmpleadoORM empleado){
-        empleado.setId(getNewId(empleado));
-        return repository.save(empleado);
+    public boolean addEmpleado(EmpleadoORM empleado){
+
+        if (validateEmpleado(empleado)){
+            empleado.setId(getMaxId(findAllEmpleados())+1);
+            repository.save(empleado);
+            return true;
+        }
+            return false;
     }
 
     public List<EmpleadoORM> findAllEmpleados(){
@@ -47,16 +57,26 @@ public class EmpleadoService {
         return "Empleado"+ empleadoId +"eliminado exitosamente";
     }
 
-    private Integer getNewId(EmpleadoORM newEmployee){
-        List<EmpleadoORM> listaTemp = findAllEmpleados();
-    
-        for (EmpleadoORM empleado : listaTemp){
-            if (newEmployee.getId().equals(empleado.getId())){
-                int id = newEmployee.getId()+1;
-                newEmployee.setId(id);
-            }
+    private Integer getMaxId(List<EmpleadoORM> listaEmpleados){
+        int maxId = 0;
+        for (EmpleadoORM empleado : listaEmpleados){
+                if (empleado.getId() > maxId){
+                    maxId = empleado.getId();
+                }
         }
-        return newEmployee.getId();
+        return maxId;
+    }
+
+    private Boolean validateEmpleado(EmpleadoORM empleado){
+        ValidatorFactory validatorFactory = Validation.byDefaultProvider()
+                .configure()
+                .messageInterpolator(new ParameterMessageInterpolator())
+                .buildValidatorFactory();
+        Validator validator = validatorFactory.getValidator();
+
+        Set<ConstraintViolation<EmpleadoORM>> violations = validator.validate(empleado);
+        log.info(String.valueOf(violations.isEmpty()));
+        return violations.isEmpty();
     }
 
 }
