@@ -54,7 +54,7 @@ public class EmpleadoService {
 
     public String deleteEmpleado(Integer empleadoId){
         repository.deleteById(empleadoId);
-        return "Empleado"+ empleadoId +"eliminado exitosamente";
+        return "Empleado "+ empleadoId +" eliminado exitosamente";
     }
 
     private Integer getMaxId(List<EmpleadoORM> listaEmpleados){
@@ -63,6 +63,7 @@ public class EmpleadoService {
                 if (empleado.getId() > maxId){
                     maxId = empleado.getId();
                 }
+    
         }
         return maxId;
     }
