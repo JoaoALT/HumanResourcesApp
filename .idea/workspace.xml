@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="55ff2151-334e-4206-ad5b-cd12b5102256" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HumanResorucesFront/recursoshumanosadministrador/src/components/TableComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/HumanResorucesFront/recursoshumanosadministrador/src/components/TableComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +71,7 @@
     "disable.download.node.interpreter.editor.notification": "true",
     "git-widget-placeholder": "Desarrollo",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Sabana2024-2/DyA Soft/HumanResourcesApp/demo/src/main/resources",
+    "last_opened_file_path": "C:/Sabana2024-2/DyA Soft/HumanResourcesApp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -201,6 +201,7 @@
       <workItem from="1726442644293" duration="524000" />
       <workItem from="1726443376833" duration="2295000" />
       <workItem from="1726490781148" duration="50000" />
+      <workItem from="1727626318685" duration="16000" />
     </task>
     <servers />
   </component>

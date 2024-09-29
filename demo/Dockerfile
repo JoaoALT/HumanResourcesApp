@@ -1,5 +1,5 @@
 # Fase de construcción (Build stage)
-FROM openjdk:17-slim AS build
+FROM openjdk:24-slim AS build
 
 # Instalar dependencias necesarias para la compilación
 RUN apt-get update && apt-get install -y \
@@ -16,7 +16,7 @@ RUN chmod +x ./gradlew
 RUN ./gradlew bootJar --no-daemon
 
 # Fase de ejecución (Run stage)p
-FROM openjdk:17-slim
+FROM openjdk:24-slim
 
 # Exponer el puerto donde corre la aplicación
 EXPOSE 8080
