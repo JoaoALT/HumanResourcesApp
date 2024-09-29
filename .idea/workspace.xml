@@ -46,6 +46,10 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
@@ -57,6 +61,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Docker.demo/Dockerfile.executor": "Run",
     "Gradle.Build demo.executor": "Run",
     "Gradle.EmpleadoServiceTest.Given_unvalidEmpleadoORM_When_validandoEmpleado_Then_AssertViolations.executor": "Run",
     "Gradle.EmpleadoServiceTest.executor": "Run",
@@ -92,7 +97,7 @@
       <recent name="C:\Sabana2024-2\D&amp;A Soft\HumanResourcesApp\demo\src\main\java\com\example\demo\bd" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.pruebaDeIntegracionNumeroUno">
+  <component name="RunManager" selected="Docker.demo/Dockerfile">
     <configuration name="EmpleadoServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -172,8 +177,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
+      <method v="2" />
+    </configuration>
+    <configuration name="demo/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="demo/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.demo/Dockerfile" />
         <item itemvalue="Gradle.pruebaDeIntegracionNumeroUno" />
         <item itemvalue="Gradle.EmpleadoServiceTest" />
         <item itemvalue="Gradle.EmpleadoServiceTest.Given_unvalidEmpleadoORM_When_validandoEmpleado_Then_AssertViolations" />
@@ -201,7 +220,7 @@
       <workItem from="1726442644293" duration="524000" />
       <workItem from="1726443376833" duration="2295000" />
       <workItem from="1726490781148" duration="50000" />
-      <workItem from="1727626318685" duration="16000" />
+      <workItem from="1727626318685" duration="1012000" />
     </task>
     <servers />
   </component>
