@@ -27,7 +27,7 @@ function App() {
 
   const deleteEmpleados = async (empleadoId) => {
     try {
-      await api.delete(`/empleados/eliminar id=${empleadoId}`);
+      await api.delete(`/empleados/${empleadoId}`);
       setEmpleados(empleados.filter(empleado => empleado.id !== empleadoId));
     } catch (err) {
       console.log(err);
@@ -42,7 +42,7 @@ function App() {
 
   const updateEmpleado = async (empleadoActualizado) => {
     try {
-      await api.put(`empleados/actualizar/${empleadoActualizado.id}`, empleadoActualizado);
+      await api.put(`/empleados/${empleadoActualizado.id}`, empleadoActualizado);
       setEmpleados(empleados.map(emp => (emp.id === empleadoActualizado.id ? empleadoActualizado : emp)));
       setModalOpen(false);
     } catch (err) {
