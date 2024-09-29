@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55ff2151-334e-4206-ad5b-cd12b5102256" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HumanResorucesFront/recursoshumanosadministrador/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/HumanResorucesFront/recursoshumanosadministrador/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HumanResorucesFront/recursoshumanosadministrador/src/components/TableComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/HumanResorucesFront/recursoshumanosadministrador/src/components/TableComponent.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +69,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.RrhhJmApplication.executor": "Run",
     "disable.download.node.interpreter.editor.notification": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Desarrollo",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Sabana2024-2/DyA Soft/HumanResourcesApp/demo/src/main/resources",
     "node.js.detected.package.eslint": "true",
