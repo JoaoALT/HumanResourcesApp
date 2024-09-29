@@ -62,6 +62,22 @@ tasks.named('test') {
 test {
 	finalizedBy jacocoTestReport
 }
+jacocoTestReport {
+	dependsOn test
+	afterEvaluate {
+		classDirectories.setFrom(
+				files(classDirectories.files.collect {
+					fileTree(dir: it, exclude: [
+							'com/example/demo/controller/**'
+					])
+				})
+		)
+	}
+	reports {
+		xml.required.set(true)
+		html.required.set(true)
+	}
+}
 sonarqube {
 	properties {
 		property("sonar.projectName", "clase20242")

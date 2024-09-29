@@ -7,7 +7,6 @@
     <list default="true" id="55ff2151-334e-4206-ad5b-cd12b5102256" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/demo/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/demo/gradle.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +100,7 @@
       <recent name="C:\Sabana2024-2\D&amp;A Soft\HumanResourcesApp\demo\src\main\java\com\example\demo\bd" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.demo [sonarqube]">
+  <component name="RunManager" selected="Gradle.pruebaDeIntegracionNumeroUno">
     <configuration name="EmpleadoServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -219,10 +218,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.demo [sonarqube]" />
-        <item itemvalue="Docker.demo/Dockerfile" />
         <item itemvalue="Gradle.pruebaDeIntegracionNumeroUno" />
         <item itemvalue="Gradle.EmpleadoServiceTest" />
+        <item itemvalue="Gradle.demo [sonarqube]" />
+        <item itemvalue="Docker.demo/Dockerfile" />
         <item itemvalue="Gradle.EmpleadoServiceTest.Given_unvalidEmpleadoORM_When_validandoEmpleado_Then_AssertViolations" />
       </list>
     </recent_temporary>
@@ -249,7 +248,7 @@
       <workItem from="1726443376833" duration="2295000" />
       <workItem from="1726490781148" duration="50000" />
       <workItem from="1727626318685" duration="2759000" />
-      <workItem from="1727633729496" duration="6005000" />
+      <workItem from="1727633729496" duration="6912000" />
     </task>
     <servers />
   </component>
