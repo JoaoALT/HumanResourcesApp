@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55ff2151-334e-4206-ad5b-cd12b5102256" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/demo/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/demo/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/demo/gradle.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,10 +47,10 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
@@ -78,7 +78,7 @@
     "disable.download.node.interpreter.editor.notification": "true",
     "git-widget-placeholder": "Desarrollo",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Sabana2024-2/DyA Soft/HumanResourcesApp/demo",
+    "last_opened_file_path": "C:/Sabana2024-2/DyA Soft/HumanResourcesApp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -95,6 +95,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Sabana2024-2\DyA Soft\HumanResourcesApp" />
       <recent name="C:\Sabana2024-2\DyA Soft\HumanResourcesApp\demo" />
       <recent name="C:\Sabana2024-2\DyA Soft\HumanResourcesApp\demo\src\main\resources" />
       <recent name="C:\Sabana2024-2\D&amp;A Soft\HumanResourcesApp\demo\src\main\java\com\example\demo\bd" />
@@ -203,13 +204,14 @@
       </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="demo/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
-          <option name="buildOnly" value="true" />
           <option name="sourceFilePath" value="demo/Dockerfile" />
         </settings>
       </deployment>
@@ -247,6 +249,7 @@
       <workItem from="1726443376833" duration="2295000" />
       <workItem from="1726490781148" duration="50000" />
       <workItem from="1727626318685" duration="2759000" />
+      <workItem from="1727633729496" duration="6005000" />
     </task>
     <servers />
   </component>

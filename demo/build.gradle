@@ -65,5 +65,6 @@ test {
 sonarqube {
 	properties {
 		property("sonar.projectName", "clase20242")
+		property("sonar.projectKey", "rrhhjm_humanresourcesapp")
 	}
 }
