@@ -3,6 +3,7 @@ plugins {
 	id 'org.springframework.boot' version '3.3.3'
 	id 'io.spring.dependency-management' version '1.1.6'
 	id 'jacoco'
+	id "org.sonarqube" version "4.4.1.3373"
 }
 
 group = 'com.example'
@@ -60,4 +61,9 @@ tasks.named('test') {
 }
 test {
 	finalizedBy jacocoTestReport
+}
+sonarqube {
+	properties {
+		property("sonar.projectName", "clase20242")
+	}
 }
